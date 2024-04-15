@@ -1,0 +1,14 @@
+python inference.py \
+--model_name "i2vgenxl" \
+--control_types "scribble" \
+--huggingface_checkpoint_folder "i2vgenxl_scribble_sparse" \
+--eval_input_type "frames" \
+--evaluation_input_folder "assets/evaluation/frames" \
+--n_sample_frames 16 \
+--num_inference_steps 50 \
+--control_guidance_end 0.6 \
+--height 512 \
+--width 512 \
+--skip_conv_in True \
+--evaluation_prompt_file "captions_sparse.json" \
+--sparse_frames 0 5 10 15

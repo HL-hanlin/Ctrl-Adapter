@@ -1,0 +1,13 @@
+python inference.py \
+--model_name "i2vgenxl" \
+--control_types "depth" "canny" "segmentation" "openpose" \
+--huggingface_checkpoint_folder "i2vgenxl_multi_control_adapter" \
+--eval_input_type "frames" \
+--evaluation_input_folder "assets/evaluation/frames" \
+--extract_control_conditions True \
+--n_sample_frames 16 \
+--num_inference_steps 50 \
+--control_guidance_end 0.6 \
+--height 512 \
+--width 512 \
+--evaluation_prompt_file "captions_multi.json"

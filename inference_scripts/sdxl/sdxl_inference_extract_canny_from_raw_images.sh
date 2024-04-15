@@ -1,0 +1,11 @@
+python inference.py \
+--model_name "sdxl" \
+--control_types "canny" \
+--huggingface_checkpoint_folder "sdxl_canny" \
+--eval_input_type "images" \
+--evaluation_input_folder "assets/evaluation/images" \
+--extract_control_conditions True \
+--num_inference_steps 50 \
+--control_guidance_end 0.5 \
+--height 1024 \
+--width 1024 

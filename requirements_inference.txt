@@ -1,0 +1,7 @@
+diffusers
+torch
+transformers
+opencv-python
+einops
+torchvision
+controlnet_aux
