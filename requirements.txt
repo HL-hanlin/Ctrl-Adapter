@@ -1,0 +1,6 @@
+diffusers
+torch
+transformers
+opencv-python
+einops
+torchvision

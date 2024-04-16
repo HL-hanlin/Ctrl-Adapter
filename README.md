@@ -4,7 +4,7 @@ Official implementation of **Ctrl-Adapter**, an efficient and versatile framewor
 to any image/video diffusion models by adapting pretrained ControlNets.
 
 
-[![arXiv](https://img.shields.io/badge/ArXiv-2404.09967-orange)](https://arxiv.org/abs/2404.09967) 
+[![arXiv](https://img.shields.io/badge/Arxiv-VideoDirectorGPT-orange)](https://ctrl-adapter.github.io/) 
 [![projectpage](https://img.shields.io/badge/Project-Page-green)](https://ctrl-adapter.github.io/)
 [![checkpoints](https://img.shields.io/badge/Model-Checkpoints-blue)](https://huggingface.co/hanlincs/ctrl-adapter)
 
@@ -24,20 +24,41 @@ to any image/video diffusion models by adapting pretrained ControlNets.
 <br>
 
 
-Ctrl-Adapter is an efficient and versatile framework for adding diverse
+CTRL-Adapter is an efficient and versatile framework for adding diverse
 spatial controls to any image or video diffusion model. It supports a variety of useful
 applications, including video control, video control with multiple conditions, video control with
 sparse frame conditions, image control, zero-shot transfer to unseen conditions, and video editing.
 
 
 
+# 🔧 Setup
+
+### Environment Setup
+
+To make our codebase easy to use, you primarily need to install Torch, Diffusers, and Transformers. Specific versions of these libraries are not required; the default versions should work fine.
+
+```shell
+conda create -n ctrl-adapter python=3.10
+conda activate ctrl-adapter
+pip install -r requirements.txt
+```
 
 
+# 🔮 Inference
 
+### Video Generation with Condition Control
+
+Here is a sample script that utilizes I2VGen-XL as the backbone model, with a depth map as the control condition. Inference consumes approximately 22GB of GPU memory on a single RTX 4090 GPU. The amount of memory required for inference depends on the backbone model used.
+
+```
+sh scripts/depth_ctrladapter_inference.sh
+```
 
 # 📝 TODO List
+There are lots of ways we are excited about improving Hotshot-XL. For example:
 
-- [ ] Release environment setup, inference code, and model checkpoints. (**WIP**)
+- [x] Release environment setup, inference code for I2VGen-XL, and model checkpoints.
+- [ ] Release checkpoints for other models.  (**WIP**)
 - [ ] Release training code, and guidline to adapt our Ctrl-Adapter to new image/video diffusion models. 
 - [ ] Release evaluation code.
 

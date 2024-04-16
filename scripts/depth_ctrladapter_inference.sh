@@ -1,0 +1,11 @@
+python inference.py --input_path "assets/example_depth_cat" \
+--prompt "A cat wearing glasses reading a newspaper on a red sofa" \
+--model_name "i2vgenxl" \
+--checkpoint_folder "i2vgenxl_depth" \
+--control_types "depth" \
+--num_inference_steps 50 \
+--n_sample_frames 16 \
+--output_fps 16 \
+--control_guidance_end 0.6 \
+--height 512 \
+--width 512 
