@@ -48,6 +48,11 @@ sparse frame conditions, image control, zero-shot transfer to unseen conditions,
 If you find our project useful in your research, please cite the following paper:
 
 ```
+@article{Lin2024CtrlAdapter,
+	author = {Han Lin and Jaemin Cho and Abhay Zala and Mohit Bansal},
+	title  = {Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model},
+	year   = {2024},
+}
 ```
 
 # 🙏 Acknowledgements
