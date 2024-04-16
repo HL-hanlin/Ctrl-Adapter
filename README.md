@@ -20,7 +20,7 @@ to any image/video diffusion models by adapting pretrained ControlNets.
 
 
 <br>
-<img width="800" src="assets/teaser.gif"/>
+<img width="800" src="assets/teaser_update.gif"/>
 <br>
 
 
