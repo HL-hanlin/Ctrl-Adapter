@@ -4,7 +4,7 @@ Official implementation of **Ctrl-Adapter**, an efficient and versatile framewor
 to any image/video diffusion models by adapting pretrained ControlNets.
 
 
-[![arXiv](https://img.shields.io/badge/ArXiv-CtrlAdapter-orange)](https://ctrl-adapter.github.io/) 
+[![arXiv](https://img.shields.io/badge/ArXiv-2404.09967-orange)](https://arxiv.org/abs/2404.09967) 
 [![projectpage](https://img.shields.io/badge/Project-Page-green)](https://ctrl-adapter.github.io/)
 [![checkpoints](https://img.shields.io/badge/Model-Checkpoints-blue)](https://huggingface.co/hanlincs/ctrl-adapter)
 
@@ -48,10 +48,13 @@ sparse frame conditions, image control, zero-shot transfer to unseen conditions,
 If you find our project useful in your research, please cite the following paper:
 
 ```
-@article{Lin2024CtrlAdapter,
-	author = {Han Lin and Jaemin Cho and Abhay Zala and Mohit Bansal},
-	title  = {Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model},
-	year   = {2024},
+@misc{lin2024ctrladapter,
+      title={Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model}, 
+      author={Han Lin and Jaemin Cho and Abhay Zala and Mohit Bansal},
+      year={2024},
+      eprint={2404.09967},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
