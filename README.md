@@ -59,7 +59,7 @@ There are lots of ways we are excited about improving Hotshot-XL. For example:
 
 - [x] Release environment setup, inference code for I2VGen-XL, and model checkpoints.
 - [ ] Release checkpoints for other models.  (**WIP**)
-- [ ] Release training code, and guidline to adapt our Ctrl-Adapter to new image/video diffusion models. 
+- [ ] Release training code, and guideline to adapt our Ctrl-Adapter to new image/video diffusion models. 
 - [ ] Release evaluation code.
 
 💗 Please let us know in the issues or PRs if you're interested in any relevant backbones or down-stream tasks that can be implemented by our Ctrl-Adapter framework!
