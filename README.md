@@ -4,7 +4,7 @@ Official implementation of **Ctrl-Adapter**, an efficient and versatile framewor
 to any image/video diffusion models by adapting pretrained ControlNets.
 
 
-[![arXiv](https://img.shields.io/badge/Arxiv-VideoDirectorGPT-orange)](https://ctrl-adapter.github.io/) 
+[![arXiv](https://img.shields.io/badge/ArXiv-2404.09967-orange)](https://arxiv.org/abs/2404.09967) 
 [![projectpage](https://img.shields.io/badge/Project-Page-green)](https://ctrl-adapter.github.io/)
 [![checkpoints](https://img.shields.io/badge/Model-Checkpoints-blue)](https://huggingface.co/hanlincs/ctrl-adapter)
 
