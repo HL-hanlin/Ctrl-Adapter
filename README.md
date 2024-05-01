@@ -136,26 +136,11 @@ We list the inference scripts for different tasks mentioned in our paper as foll
 
 ### SDXL
 
-<table>
-  <tr>
-    <th>Control Conditions</th>
-    <th colspan="1">Checkpoint</th>
-    <th colspan="1">Inference (w/ extracted condition)</th>
-    <th colspan="1">Inference (w/o extracted condition)</th>
-  </tr>
-  <tr>
-    <td>Depth Map</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_depth">HF link</a></td>
-    <td>sdxl_inference_depth.sh</td>
-    <td>sdxl_inference_extract_depth_from_raw_image.sh</td> 
-  </tr>
-  <tr>
-    <td>Canny Edge</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_canny">HF link</a></td>
-    <td>sdxl_inference_canny.sh</td>
-    <td>sdxl_inference_extract_canny_from_raw_images.sh</td>
-  </tr>
-</table>
+
+| Control Conditions    | Checkpoints | Inference (w/ extracted condition) | Inference (w/o extracted condition) |
+|-----------|------|---------|--------|
+| Depth Map      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_depth">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_depth.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_depth_from_raw_image.sh)   |
+| Canny Edge     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_canny">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_canny.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_canny_from_raw_images.sh)   |
 
 
 
@@ -169,64 +154,24 @@ We list the inference scripts for different tasks mentioned in our paper as foll
 </div>
 <br>
 
+
 ### I2VGen-XL
 
-<table>
-  <tr>
-    <th>Control Conditions</th>
-    <th colspan="1">Checkpoint</th>
-    <th colspan="1">Inference (w/ extracted condition)</th>
-    <th colspan="1">Inference (w/o extracted condition)</th>
-  </tr>
-  <tr>
-    <td>Depth Map</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_depth">HF link</a></td>
-    <td>i2vgenxl_inference_depth.sh</td>
-    <td>i2vgenxl_inference_extract_depth_from_raw_frames.sh</td> 
-  </tr>
-  <tr>
-    <td>Canny Edge</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_canny">HF link</a></td>
-    <td>i2vgenxl_inference_canny.sh</td>
-    <td>i2vgenxl_inference_extract_canny_from_raw_frames.sh</td>
-  </tr>
-  <tr>
-    <td>Soft Edge</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_softedge">HF link</a></td>
-    <td>i2vgenxl_inference_softedge.sh</td>
-    <td>i2vgenxl_inference_extract_softedge_from_raw_frames.sh</td>
-  </tr>
-</table>
+| Control Conditions    | Checkpoints | Inference (w/ extracted condition) | Inference (w/o extracted condition) |
+|-----------|------|---------|--------|
+| Depth Map      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_depth">HF link</a>    | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_depth.sh)       | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_extract_depth_from_raw_frames.sh)   |
+| Canny Edge     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_canny">HF link</a>    | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_canny.sh)       | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_extract_canny_from_raw_frames.sh)   |
+| Soft Edge      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_softedge">HF link</a> | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_softedge.sh)    | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_extract_softedge_from_raw_frames.sh)   |
+
 
 
 ### SVD
 
-<table>
-  <tr>
-    <th>Control Conditions</th>
-    <th colspan="1">Checkpoint</th>
-    <th colspan="1">Inference (w/ extracted condition)</th>
-    <th colspan="1">Inference (w/o extracted condition)</th>
-  </tr>
-  <tr>
-    <td>Depth Map</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_depth">HF link</a></td>
-    <td>svd_inference_depth.sh</td>
-    <td>svd_inference_extract_depth_from_raw_frames.sh</td> 
-  </tr>
-  <tr>
-    <td>Canny Edge</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_canny">HF link</a></td>
-    <td>svd_inference_canny.sh</td>
-    <td>svd_inference_extract_canny_from_raw_frames.sh</td>
-  </tr>
-  <tr>
-    <td>Soft Edge</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_softedge">HF link</a></td>
-    <td>svd_inference_softedge.sh</td>
-    <td>svd_inference_extract_softedge_from_raw_frames.sh</td>
-  </tr>
-</table>
+| Control Conditions    | Checkpoints | Inference (w/ extracted condition) | Inference (w/o extracted condition) |
+|-----------|------|---------|--------|
+| Depth Map      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_depth">HF link</a>    | [command](/inference_scripts/svd/svd_inference_depth.sh)       | [command](/inference_scripts/svd/svd_inference_extract_depth_from_raw_frames.sh)   |
+| Canny Edge     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_canny">HF link</a>    | [command](/inference_scripts/svd/svd_inference_canny.sh)       | [command](/inference_scripts/svd/svd_inference_extract_canny_from_raw_frames.sh)   |
+| Soft Edge      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/svd_softedge">HF link</a> | [command](/inference_scripts/svd/svd_inference_softedge.sh)    | [command](/inference_scripts/svd/svd_inference_extract_softedge_from_raw_frames.sh)   |
 
 
 
@@ -238,22 +183,9 @@ We list the inference scripts for different tasks mentioned in our paper as foll
 
 We currently implemented multi-condition control on **I2VGen-XL**. The following checkpoint are trained on 7 control conditions, including depth, canny, normal, softedge, segmentation, lineart, and openpose. Here are the sample inference scripts that uses depth, canny, segmentation, and openpose as control conditions.
 
-<table>
-  <tr>
-    <th colspan="1">Adapter Checkpoint</th>
-    <th colspan="1">Router Checkpoint</th>
-    <th colspan="1">Inference (w/ extracted condition)</th>
-    <th colspan="1">Inference (w/o extracted condition)</th>
-  </tr>
-  <tr>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_multi_control_adapter">HF link</a></td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_multi_control_router">HF link</a></td>
-    <td>i2vgenxl_inference_depth_canny_segmentation_openpose.sh</td>
-    <td>i2vgenxl_inference_extract_depth_canny_segmentation_openpose_from_raw_frames.sh</td> 
-  </tr>
-</table>
-
-
+| Adapter Checkpoint    | Router Checkpoint | Inference (w/ extracted condition) | Inference (w/o extracted condition) |
+|-----------|------|---------|--------|
+| <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_multi_control_adapter">HF link</a>      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_multi_control_router">HF link</a>    | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_depth_canny_segmentation_openpose.sh)       | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_extract_depth_canny_segmentation_openpose_from_raw_frames.sh)   |
 
 
 
@@ -265,19 +197,9 @@ We currently implemented multi-condition control on **I2VGen-XL**. The following
 
 Here we provide a sample inference script that uses user scribbles as condition, and 4 out of 16 frames for sparse control.
 
-<table>
-  <tr>
-    <th>Control Conditions</th>
-    <th colspan="1">Checkpoint</th>
-    <th colspan="1">Inference (w/ extracted condition)</th>
-  </tr>
-  <tr>
-    <td>User Scribbles</td>
-    <td><a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_scribble_sparse">HF link</a></td>
-    <td>i2vgenxl_inference_scribble_sparse.sh</td>
-  </tr>
-</table>
-
+| Control Conditions    | Checkpoint | Inference (w/ extracted condition) |
+|-----------|------|---------|
+| Scribbles      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/i2vgenxl_scribble_sparse">HF link</a>    | [command](/inference_scripts/i2vgenxl/i2vgenxl_inference_scribble_sparse.sh)       |
 
 
 

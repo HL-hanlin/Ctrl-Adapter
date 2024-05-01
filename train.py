@@ -1142,7 +1142,7 @@ def main(args):
                 train_noise_aug = 0.02 
                 
                 small_noise_latents = latents + noise * train_noise_aug
-                conditional_latents = small_noise_latents[:, 0, :, :, :]
+                conditional_latents = small_noise_latents[:, :, 0, :, :]
                 conditional_latents = conditional_latents / vae.config.scaling_factor
 
                 noisy_latents_4channels  = latents + noise * sigmas_reshaped 
@@ -1168,7 +1168,7 @@ def main(args):
                     conditional_latents = image_mask * conditional_latents
 
                 # Concatenate the `conditional_latents` with the `noisy_latents`.
-                conditional_latents = conditional_latents.unsqueeze(1).repeat(1, noisy_latents.shape[1], 1, 1, 1)
+                conditional_latents = conditional_latents.unsqueeze(2).repeat(1, 1, noisy_latents.shape[2], 1, 1)
                 noisy_latents = torch.cat([noisy_latents, conditional_latents], dim=1) 
                 target = rearrange(latents, "b c f h w -> b f c h w") 
 
