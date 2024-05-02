@@ -141,7 +141,11 @@ We list the inference scripts for different tasks mentioned in our paper as foll
 |-----------|------|---------|--------|
 | Depth Map      | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_depth">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_depth.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_depth_from_raw_image.sh)   |
 | Canny Edge     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_canny">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_canny.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_canny_from_raw_images.sh)   |
-
+| Soft Edge     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_softedge">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_softedge.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_softedge_from_raw_images.sh)   |
+| Normal Map     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_normal">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_normal.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_normal_from_raw_images.sh)   |
+| Segmentation     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_segmentation">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_segmentation.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_segmentation_from_raw_images.sh)   |
+| Scribble     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_scribble">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_scribble.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_scribble_from_raw_images.sh)   |
+| Lineart     | <a href="https://huggingface.co/hanlincs/Ctrl-Adapter/tree/main/sdxl_lineart">HF link</a> | [command](/inference_scripts/sdxl/sdxl_inference_lineart.sh)    | [command](/inference_scripts/sdxl/sdxl_inference_extract_lineart_from_raw_images.sh)   |
 
 
 
@@ -273,7 +277,8 @@ To train Ctrl-Adapter on a new backbone model, basically here are several steps 
 # 📝 TODO List
 - [x] Release environment setup, inference code, and model checkpoints.
 - [x] Release training code.
-- [x] Training guideline to adapt our Ctrl-Adapter to new image/video diffusion models. 
+- [x] Training guideline to adapt our Ctrl-Adapter to new image/video diffusion models.
+- [ ] Ctrl-Adapter + DiT-based image/video generation backbones. (**WIP**)
 - [ ] Release evaluation code.
 
 💗 Please let us know in the issues or PRs if you're interested in any relevant backbones or down-stream tasks that can be implemented by our Ctrl-Adapter framework! Welcome to collaborate and contribute!
