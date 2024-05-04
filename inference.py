@@ -244,7 +244,12 @@ def inference_main(inference_args):
                 device_map=None
                 ).cuda()
         else:
-            router = ControlNetRouter.from_pretrained(output_dir, subfolder=f"router_{global_step}", low_cpu_mem_usage=False, device_map=None).cuda()
+            router = ControlNetRouter.from_pretrained(
+                inference_args.local_checkpoint_path, 
+                subfolder=f"router_{inference_args.global_step}", 
+                low_cpu_mem_usage=False, 
+                device_map=None
+                ).cuda()
         router = router.to(data_type)
         router.eval()
 

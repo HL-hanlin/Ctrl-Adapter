@@ -54,6 +54,7 @@ class ControlNetRouter(ModelMixin, ConfigMixin,):
         embedding_dim = None,
         num_routers = 12,
         add_mid_block_router = True,
+        use_sparsemax = False,
     ):
         super().__init__()
         
@@ -63,6 +64,7 @@ class ControlNetRouter(ModelMixin, ConfigMixin,):
         self.embedding_dim = embedding_dim
         self.backbone_model_name = backbone_model_name
         self.add_mid_block_router = add_mid_block_router
+        self.use_sparsemax = use_sparsemax # this is not used in our current version
 
         ##### down blocks #####
         self.down_blocks_router = nn.ModuleList([])

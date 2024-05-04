@@ -1,0 +1,11 @@
+accelerate launch train.py \
+--yaml_file configs/i2vgenxl_train_multi_condition.yaml \
+--evaluation_input_folder "assets/evaluation/frames" \
+--evaluation_output_folder "Output_i2vgenxl_multi_condition" \
+--evaluation_prompt_file "captions.json" \
+--num_inference_steps 50 \
+--control_guidance_end 1.0 \
+--save_n_steps 5000 \
+--validate_every_steps 5000 \
+--save_starting_step 5000
+--extract_control_conditions True 

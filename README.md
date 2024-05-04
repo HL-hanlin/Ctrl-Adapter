@@ -31,7 +31,7 @@ sparse frame conditions, image control, zero-shot transfer to unseen conditions,
 
 # 🔥 News
 - **Apr. 30, 2024**. Training code released now! It's time to train Ctrl-Adapter on your desired backbone! 🚀🚀
-- **Apr. 29, 2024**. **SDXL**, **I2VGen-XL**, and **SVD** inference code and checkpoints are all released!
+- **Apr. 29, 2024**. **[SDXL](https://stability.ai/news/stable-diffusion-sdxl-1-announcement)**, **[I2VGen-XL](https://i2vgen-xl.github.io/)**, and **[SVD](https://stability.ai/news/stable-video-diffusion-open-ai-video-model)** inference code and checkpoints are all released!
 
 
 # 🔧 Setup
@@ -244,19 +244,50 @@ Most of our control condition extractors are directly utilized from the transfor
 
 All training configuration files and training scripts are placed under ```./configs``` and ```train_scripts``` respectively. 
 
-Here is the command we used to start training on SDXL with depth map as control condition.
+#### 4.1 Controllable Image/Video Generation
+
+Here is the command we used to start training on SDXL with depth map as control condition. Training scripts on I2VGen-XL and SVD are roughly the same.
 
 ```
 sh train_scripts/sdxl/sdxl_train_depth.sh
 ```
 
-Specifically, in the training scripts, we added hyper-parameters that controls how many training steps we do evaluation. In this way, you can monitor the training process better.
+Specifically, in the training scripts:
+
+`--yaml_file`: The configuration file for all hyper-parameters related to **training**.
+
+The rest of the hyper-parameters in the training script are for **evaluation**, which can help you monitor the training process better.
 
 `--save_n_steps`: Save the trained adapter checkpoints every n training steps.
 
+`--save_starting_step`: Save the trained adapter checkpoints after such training steps.
+
 `--validate_every_steps`: Perform evaluation every x training steps. The evaluation data are placed under ```./assets/evaluation```. If you prefer to evaluate different samples, you can replace them by following the same file structure.
 
+`--num_inference_steps`: The number of inference steps during inference. We can just set it as the same value as the default inference steps of the backbone model.
+
 ```--extract_control_conditions```: If you already have condition image/frames extracted from evaluation image/video (see Inference Data Structure section above), you can set it as ```False```. Otherwise, if you haven't extracted control conditions and only have the raw image/frames, you can set it as ```True```, and our code can automatically extract the control conditions from the evaluation image/frames. The default setting is ```False```.
+
+```--control_guidance_end```: As mentioned above, this is the most important parameter that balances generated image/video quality with control strength. But since we want to see if the training code working or not, we recommend just setting it as 1.0 to give control across all inference steps. You can adjust it to a lower value later after you have a trained model.
+
+
+#### 4.2 Multi-Condition Control 
+
+Here is the command we used to do multi-condition control training on I2VGen-XL. 
+
+```
+sh train_scripts/i2vgenxl/i2vgenxl_train_multi_condition.sh
+```
+
+Please note that we currently only support I2VGen-XL for multi-condition control. If you are interested in trying it with other backbones, you can modify the code accordingly. 
+
+In the training configuration file, here are the hyper-parameters specific to multi-condition control: 
+
+`--control_types`: You can put the list of control conditions you want here, such as ```[depth, canny, normal, segmentation]```.
+
+```--router_type```: We currently support equal weight and linear weight in our codebase. The definition of different router types are illustrated in our paper. 
+
+```--multi_source_random_select_control_types``` and ```--max_num_multi_source_train```: Since we need to load the ControlNet for each control type in the above `--control_types` list, the training code will go out-of-memory if there are too many control conditions. Therefore, we add a binary hyper-parameter `--multi_source_random_select_control_types` to randomly select k control conditions within the range `[1, --max_num_multi_source_train]` in each training step. If the training script can run without out-of-memory on your GPUs, you can just set `--multi_source_random_select_control_types` as `False`.
 
 
 ### Step 5: Train Ctrl-Adapter on a New Backbone Model (Optional)

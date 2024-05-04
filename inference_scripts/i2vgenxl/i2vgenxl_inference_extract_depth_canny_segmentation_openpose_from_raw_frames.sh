@@ -7,7 +7,7 @@ python inference.py \
 --extract_control_conditions True \
 --n_sample_frames 16 \
 --num_inference_steps 50 \
---control_guidance_end 0.6 \
+--control_guidance_end 0.8 \
 --height 512 \
 --width 512 \
 --evaluation_prompt_file "captions_multi.json"

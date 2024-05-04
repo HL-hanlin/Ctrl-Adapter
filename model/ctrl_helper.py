@@ -203,7 +203,7 @@ class ControlNetHelper(ModelMixin, ConfigMixin):
                     #with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
                     pixel_values = self.segmentation_image_processor(image, return_tensors="pt").pixel_values
                     with torch.no_grad():
-                        outputs = self.segmentation_image_segmentor(pixel_values.cuda())
+                        outputs = self.segmentation_image_segmentor(pixel_values.to(self.segmentation_image_segmentor.dtype).cuda())
                         seg = self.segmentation_image_processor.post_process_semantic_segmentation(
                             outputs, target_sizes=[image.size[::-1]])[0]
                         seg = seg.cpu()

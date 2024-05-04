@@ -1,0 +1,87 @@
+# ==================== 1. set up data paths ==================== #
+
+# this will be the path where all training checkpoints will be stored
+DATA_PATH: xxx ##### ACTION NEEDED: set this path before training #####
+ 
+# the folder where training data is stored
+train_data_path: sample_data/videos ##### ACTION NEEDED: path for the training image folder #####
+
+# the csv file for training prompts
+train_prompt_path: sample_data/video_captions.csv ##### ACTION NEEDED: path for the training prompt csv file #####
+
+# batch size per gpu. we use batch size of 1 by default. 
+# you can adjust it based on your GPU memory available
+train_batch_size: 1
+
+# this parameter represents that we resize the input image to 512 * 512 before giving to SDv1.5 ControlNet
+# adding support for different resolutions is left for future work
+use_size_512: True 
+
+# train and generate images at resolution 512 by 512
+height: 512
+width: 512 
+
+# for video generation models (e.g., I2VGen-XL), need to set both of the following as the default settings in the backbone model
+n_sample_frames: 16
+output_fps: 16
+
+# for video generation models (e.g., I2VGen-XL), set input as videos, and eval input as frames
+input_data_type: videos # will use corresponding video data loader
+eval_input_type: frames # will evaluate on specified video dataset
+
+
+
+# ==================== 2. Ctrl-Adapter configurations ==================== #
+
+model_name: i2vgenxl
+
+# notice that we need to set the value of this cross_attention_dim same as the prompt/image embedding channel dimension of the backbone model 
+# e.g., for I2VGen-XL, the image embedding dimension is 1024
+cross_attention_dim: 1024
+
+# by default, we activate spatial resnet, temporal resnet,  spatial attention/transformer, and temporal attention/transformer blocks in I2VGen-XL Ctrl-Adapter
+# comparison of different architecture design is shown in the Ablation Studies section in our main paper
+add_spatial_resnet: True
+add_temporal_resnet: True
+add_spatial_transformer: True
+add_temporal_transformer: True
+
+# by default, we use one block of each of the four types above in I2VGen-XL Ctrl-Adapter
+# comparison of different architecture design is shown in the Ablation Studies section in our main paper
+num_blocks: 1
+
+# by default, we use output blocks A, B, C, D and mid block for I2VGen-XL Ctrl-Adapter 
+adapter_locations: [A, B, C, D, M]
+# by default, we add three Ctrl-Adapters for each output block (see Appendix Additional Quantitative Analysis for details)
+num_adapters_per_location: 3
+
+# controlnet-related parameters
+skip_conv_in: False # only set this as True for sparse-control training and models trained with continuous noise scheduler (e.g. SVD) 
+skip_time_emb: False # False by default
+fixed_controlnet_timestep: -1  # -1 by default. if it is set as value within range [0, 1000], we will only give this fixed_controlnet_timestep to SDv1.5 ControlNet during training and inference
+
+
+
+# ==================== 3. specify the control type you want to train ==================== #
+
+# represents which control condition we want to train and evaluate. Can be one of depth, canny, normal, segmentation, softedge, lineart, openpose
+control_types: [depth, canny, normal, segmentation, softedge, lineart, openpose] # can be one of depth, canny, normal, segmentation, softedge, lineart, openpose
+
+# this is used together with the following "max_num_multi_source_train" parameter.
+# you can set it as False if there's enough GPU memory 
+multi_source_random_select_control_types: True 
+
+# max number of control conditions to use at the same time during each multi-condition control training step.
+# you can set this as a higher value if there's more GPU memory available
+max_num_multi_source_train: 4 
+
+# moe router type. We currrently support simple_weights and equal_weights
+# see our paper for details
+router_type: simple_weights
+
+
+# if you want to train a single adapter that works for multiple control conditions, you can set the following as a list: 
+# such as [depth, canny, normal, segmentation, softedge, lineart, openpose]
+# then in each training step, a control condition will be randomly selected from the list
+# if you just want to train an adapter that only works for a single control conditiono (e.g., depth), just leave this as empty list
+mixed_control_types_training: [] 
