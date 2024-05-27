@@ -33,7 +33,7 @@ sparse frame conditions, image control, zero-shot transfer to unseen conditions,
 - **May. 26, 2024**. Check our new [arXiv-v2](https://arxiv.org/abs/2404.09967) for exciting new additions to Ctrl-Adapter!
   - Support for DiT-based backbones (**[Latte](https://github.com/Vchitect/Latte)**, **[PixArt-α](https://github.com/PixArt-alpha/PixArt-alpha)**)
   - Fine-grained patch-level MoE router for multi-control composition
-  - Downstream tasks beyond spatial control (video editing, video style transfer, and text-guided motion control)
+  - Downstream tasks beyond spatial control (video editing, video style transfer, text-guided motion control)
 - **Apr. 30, 2024**. Training code released now! It's time to train Ctrl-Adapter on your desired backbone! 🚀🚀
 - **Apr. 29, 2024**. **[SDXL](https://stability.ai/news/stable-diffusion-sdxl-1-announcement)**, **[I2VGen-XL](https://i2vgen-xl.github.io/)**, and **[SVD](https://stability.ai/news/stable-video-diffusion-open-ai-video-model)** inference code and checkpoints are all released!
 
