@@ -222,7 +222,8 @@ You can find detailed training guideline for Ctrl-Adapter [here](/assets/train_g
 - [x] Release environment setup, inference code, and model checkpoints.
 - [x] Release training code.
 - [x] Training guideline to adapt our Ctrl-Adapter to new image/video diffusion models.
-- [x] Ctrl-Adapter + DiT-based image/video generation backbones. (**WIP**)
+- [ ] Ctrl-Adapter + DiT-based image/video generation backbones (Latte, PixArt-α). (**WIP**)
+- [ ] Code for video editing and text-guided motion control. (**WIP**)
 - [ ] Release evaluation code.
 
 💗 Please let us know in the issues or PRs if you're interested in any relevant backbones or down-stream tasks that can be implemented by our Ctrl-Adapter framework! Welcome to collaborate and contribute!
