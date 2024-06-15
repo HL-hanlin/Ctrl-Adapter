@@ -261,7 +261,7 @@ def inference_main(inference_args):
     # create dir for condition images/frames 
     output_condition_images_dir = []
     for i, ctrl_type in enumerate(inference_args.control_types):
-        output_condition_images_dir.append(os.path.join(output_dir, f"conditon_{ctrl_type}_{inference_args.eval_input_type}"))
+        output_condition_images_dir.append(os.path.join(output_dir, f"condition_{ctrl_type}_{inference_args.eval_input_type}"))
         os.makedirs(output_condition_images_dir[-1], exist_ok=True)
 
     if inference_args.extract_control_conditions or inference_args.eval_input_type == 'frames':
