@@ -1,4 +1,4 @@
-# Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model
+# Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model (ICLR 2025 Oral)
 
 Official implementation of **Ctrl-Adapter**, an efficient and versatile framework that adds diverse controls
 to any image/video diffusion models by adapting pretrained ControlNets.
