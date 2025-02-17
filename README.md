@@ -190,7 +190,7 @@ We list the inference scripts for different tasks mentioned in our paper as foll
 <img width="800" src="assets/boy_and_mom.gif"/>
 <br>
 
-We currently implemented multi-condition control on **I2VGen-XL**. The following checkpoint are trained on 7 control conditions, including depth, canny, normal, softedge, segmentation, lineart, and openpose. Here are the sample inference scripts that uses depth, canny, segmentation, and openpose as control conditions.
+We currently implemented multi-condition control on **I2VGen-XL**. The following checkpoints are trained on 7 control conditions, including depth, canny, normal, softedge, segmentation, lineart, and openpose. Here are the sample inference scripts that use depth, canny, segmentation, and openpose as control conditions.
 
 | Adapter Checkpoint    | Router Checkpoint | Inference (w/ extracted condition) | Inference (w/o extracted condition) |
 |-----------|------|---------|--------|
